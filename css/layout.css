@@ -8,7 +8,6 @@
     border: 1px solid #f1f1f1;
     display: none;    
     border-radius: 20px;
-    overflow: hidden;
     box-shadow: 3px 3px rgba(0, 0, 0, .3);
     box-sizing: border-box;
 
@@ -42,4 +41,45 @@
 /* 팝업이 노출되었을때는 body스크롤 나타나지않게 */
 .popupShow{
     overflow-y: hidden;
+}
+
+/* 팝업 닫기버튼 스타일 가상선택자로 처리하기*/
+
+
+#popup button{
+    position: absolute;
+    right: 0;
+    bottom: calc(100% - 0.5rem);
+    background: transparent;
+    width: 2rem; height: 2rem;    
+    border: 0;
+    cursor: pointer;
+    font-size: 0;
+
+}
+
+#popup button:before,
+#popup button:after{
+    /* 필수스타일속성 */
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+}
+
+#popup button:before{
+    top: 0; 
+    left: 0;
+    right: 0;
+    transform: rotate(-45deg);
+
+}
+
+#popup button:after{
+    top: 0; 
+    left: 0;
+    right: 0;
+    transform: rotate(45deg);
 }
