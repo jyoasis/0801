@@ -10,12 +10,17 @@
     border: 1px solid #f1f1f1;
     max-width: 600px;
     max-height: 600px;
+    /* width: calc(100% - 30px); */
     display: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 3px 3px rgba(0, 0, 0, .3);
 }
 
 /* 원래 안보이는데 부모클래스 있을때 적용되면 나타난다 */
 .popupShow #popup{
     display: block;
+    
 }
 
 /* 딤처리 */
@@ -24,4 +29,9 @@
     position: fixed;
     left: 0; top: 0; right: 0; bottom: 0;
     background-color: rgba(0, 0, 0, .6);
+}
+
+/* 팝업이 노출되었을때는 body스크롤 나타나지않게 */
+.popupShow{
+    overflow-y: hidden;
 }
